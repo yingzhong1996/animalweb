@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Dataset Description</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 40px;
+      }
+
+      .data-box {
+        border: 1px solid #ddd;
+        padding: 20px;
+        max-width: 600px;
+      }
+
+      .data-box img {
+        max-width: 100%;
+        height: auto;
+        margin-top: 10px;
+      }
+
+      .label {
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Dataset Description</h1>
+
+    <p>
+      This dataset contains information about animals and related storybooks.
+      Below is an example entry from the dataset.
+    </p>
+
+    <div class="data-box">
+      <h2>Example Entry</h2>
+
+      <p>
+        <span class="label">Title:</span>
+        {{ data.title }}
+      </p>
+
+      <p>
+        <span class="label">Animal:</span>
+        {{ data.animal }}
+      </p>
+
+      {% if data.cover_image %}
+      <p class="label">Cover image:</p>
+      <img
+        src="{{ data.book_cover_image }}"
+        alt="Cover image for {{ data.title }}"
+      />
+      {% else %}
+      <p><em>No cover image available.</em></p>
+      {% endif %}
+    </div>
+  </body>
+</html>
